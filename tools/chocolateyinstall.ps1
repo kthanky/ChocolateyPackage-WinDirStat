@@ -12,7 +12,7 @@ $url        = 'https://windirstat.net/wds_current_setup.exe' # download url
 $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
-  fileType      = 'EXE_MSI_OR_MSU' #only one of these: exe, msi, msu
+  fileType      = 'EXE' #only one of these: exe, msi, msu
   url           = $url
   
   #MSI
@@ -35,8 +35,8 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName  = 'windirstat*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum      = '752e1687d58de3bef927d9ad24c0ed3da3754e17'
-  checksumType  = 'sha1' #default is md5, can also be sha1, sha256 or sha512
+  #checksum      = ''
+  #checksumType  = 'md5' #default is md5, can also be sha1, sha256 or sha512
 }
 
 Install-ChocolateyPackage @packageArgs # https://chocolatey.org/docs/helpers-install-chocolatey-package
